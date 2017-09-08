@@ -9,16 +9,31 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var numberLabel: UILabel!
+    
+    let names = ["Mike", "Jenny", "Forrest", "Bubba", "Lt Dan", "Steve"]
+    
+    @IBAction func callButtonPressed(_ sender: UIButton) {
+        let currentName = Int(arc4random_uniform(UInt32(names.count)))
+        nameLabel.text = names[currentName]
+        
+        let currentNum = Int(arc4random_uniform(UInt32(5) + 1))
+        numberLabel.text = "\(currentNum)"
+       
+        
+        
+    }
+    
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
 
 
 }

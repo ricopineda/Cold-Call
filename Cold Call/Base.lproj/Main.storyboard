@@ -1,26 +1,81 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Cold_Call" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0u-We-coD">
+                                <rect key="frame" x="34" y="508" width="253" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Cold Call">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="callButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oTb-X6-4Gw"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sm3-9F-CFe">
+                                <rect key="frame" x="51" y="63" width="218" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdj-XF-TKW">
+                                        <rect key="frame" x="0.0" y="0.0" width="218" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdF-2d-hAi">
+                                <rect key="frame" x="60" y="247.5" width="200" height="74"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOf-sa-zX2">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="74"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="62"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rdF-2d-hAi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9Zo-2Y-u5s"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sm3-9F-CFe" secondAttribute="trailing" constant="35" id="JTA-Q4-bMw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rdF-2d-hAi" secondAttribute="trailing" constant="44" id="NSZ-Wb-NNw"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f0u-We-coD" secondAttribute="bottom" constant="30" id="Ts3-Ag-j28"/>
+                            <constraint firstItem="sm3-9F-CFe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="43" id="Zwd-Zk-RLF"/>
+                            <constraint firstItem="rdF-2d-hAi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="44" id="b1c-DT-P2d"/>
+                            <constraint firstItem="f0u-We-coD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="18" id="fFf-wu-Wa0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f0u-We-coD" secondAttribute="trailing" constant="17" id="lqS-Lg-O8A"/>
+                            <constraint firstItem="sm3-9F-CFe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="35" id="ycg-F8-7hv"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="Wdj-XF-TKW" id="41s-CC-G9s"/>
+                        <outlet property="numberLabel" destination="HOf-sa-zX2" id="8mR-w3-csm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.875" y="138.38028169014083"/>
         </scene>
     </scenes>
 </document>
